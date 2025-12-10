@@ -1,0 +1,22 @@
+{% comment %} 섹션 마크업 {% endcomment %}
+<section class="my-promo">
+  <h2>{{ section.settings.heading }}</h2>
+  {% if section.settings.body != blank %}
+    <div>{{ section.settings.body }}</div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "섹션 페이지",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Hello!" },
+    { "type": "richtext", "id": "body", "label": "Body" }
+  ],
+  "presets": [
+    { "name": "섹션 페이지", "category": "Custom" }
+  ]
+}
+{% endschema %}
